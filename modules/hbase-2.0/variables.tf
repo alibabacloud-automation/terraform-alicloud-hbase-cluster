@@ -89,13 +89,13 @@ variable "pay_type" {
 }
 
 variable "duration" {
-  description = "valid when pay_type = PrePaid"
+  description = "The duration that you will buy HBase cluster, valid when pay_type = PrePaid"
   type        = string
   default     = 1
 }
 
 variable "auto_renew" {
-  description = "valid when pay_type = PrePaid"
+  description = "auto to renew cluster, valid when pay_type = PrePaid"
   type        = string
   default     = "false"
 }
@@ -123,5 +123,6 @@ variable "create_instance" {
 
 variable "existing_instance_id" {
   description = "The Id of an existing HBase instance. If set, the `create_instance` will be ignored."
+  type        = string
   default     = ""
 }

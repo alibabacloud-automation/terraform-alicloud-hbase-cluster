@@ -123,5 +123,6 @@ variable "create_instance" {
 
 variable "existing_instance_id" {
   description = "The Id of an existing HBase instance. If set, the `create_instance` will be ignored."
+  type        = string
   default     = ""
 }

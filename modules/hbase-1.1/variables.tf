@@ -77,7 +77,7 @@ variable "core_disk_type" {
 }
 
 variable "core_disk_size" {
-  description = "# one disk size, unit: GB, default 4 disk per core node; all disk size = coreNodeSize * 4 * core_disk_size(2 * 4 * 100 =800GB)"
+  description = "one disk size, unit: GB, default 4 disk per core node; all disk size = coreNodeSize * 4 * core_disk_size(2 * 4 * 100 =800GB)"
   type        = number
   default     = 100
 }
@@ -89,13 +89,13 @@ variable "pay_type" {
 }
 
 variable "duration" {
-  description = "valid when pay_type = PrePaid"
+  description = "The duration that you will buy HBase cluster, valid when pay_type = PrePaid"
   type        = string
   default     = 1
 }
 
 variable "auto_renew" {
-  description = "valid when pay_type = PrePaid"
+  description = "auto to renew cluster, valid when pay_type = PrePaid"
   type        = string
   default     = "false"
 }
@@ -116,12 +116,13 @@ variable "cold_storage_size" {
 # extend
 #################
 variable "create_instance" {
-  description = "Whether to create HBase instance. If false, you can use a existing HBase instance by setting `existing_instance_id`."
+  description = "Whether to create HBase instance. If false, you can use a existing HBase instance by setting 'existing_instance_id'."
   type        = bool
   default     = true
 }
 
 variable "existing_instance_id" {
-  description = "The Id of an existing HBase instance. If set, the `create_instance` will be ignored."
+  description = "The Id of an existing HBase instance. If set, the 'create_instance' will be ignored."
+  type        = string
   default     = ""
 }

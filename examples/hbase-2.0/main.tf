@@ -12,7 +12,7 @@ data "alicloud_zones" "default" {
 }
 
 data "alicloud_vpcs" "default" {
-  is_default = "true"
+  is_default = true
 }
 
 data "alicloud_vswitches" "default" {

@@ -37,11 +37,11 @@ output "this_hbase_instance_core_instance_quantity" {
 }
 
 output "this_hbase_instance_core_disk_type" {
-  description = "the disk type of the core node. "
+  description = "The disk type of the core node. "
   value       = module.hbase.this_hbase_instance_core_disk_type
 }
 output "this_hbase_instance_core_disk_size" {
-  description = "the disk size of the core node. "
+  description = "The disk size of the core node. "
   value       = module.hbase.this_hbase_instance_core_disk_size
 }
 output "this_hbase_instance_pay_type" {

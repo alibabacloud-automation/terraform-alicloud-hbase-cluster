@@ -37,11 +37,11 @@ output "this_hbase_instance_core_instance_quantity" {
 }
 
 output "this_hbase_instance_core_disk_type" {
-  description = "the disk type of the core node. "
+  description = "The disk type of the core node. "
   value       = concat(alicloud_hbase_instance.this.*.vswitch_id, [""])[0]
 }
 output "this_hbase_instance_core_disk_size" {
-  description = "the disk size of the core node. "
+  description = "The disk size of the core node. "
   value       = concat(alicloud_hbase_instance.this.*.core_disk_size, [""])[0]
 }
 output "this_hbase_instance_pay_type" {

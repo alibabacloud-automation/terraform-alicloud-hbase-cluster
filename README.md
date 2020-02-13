@@ -14,13 +14,13 @@ These types of resources are supported:
 
 ## Terraform versions
 
-This module requires Terraform 0.12.
+This module requires Terraform 0.12 and Terraform Provider AliCloud 1.56.0+.
 
 ## Usage
 -----
-You can use this in your terraform template with the following steps.
+### You can use this in your terraform template with the following steps.
 
-1. Adding a module resource to your template, e.g. main.tf
+Adding a module resource to your template, e.g. main.tf
 
 ```hcl
 module "hbase" {

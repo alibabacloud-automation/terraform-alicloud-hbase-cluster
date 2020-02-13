@@ -3,7 +3,7 @@ terraform-alicloud-hbase-cluster
 =====================================================================
 
 
-本 Module 用于在阿里云的 VPC 下创建一个[HBase云数据库](https://help.aliyun.com/product/49055.html). 
+本 Module 用于在阿里云的 VPC 下创建一个[HBase云数据库](https://help.aliyun.com/product/49055.html)。
 
 本 Module 支持创建以下资源:
 
@@ -11,9 +11,13 @@ terraform-alicloud-hbase-cluster
 
 ## Terraform 版本
 
-本模板要求使用版本 Terraform 0.12.*
+本模版要求使用 Terraform 0.12 和阿里云 Provider 1.56.0+。
 
 ## 用法
+-----
+### 你可以通过以下步骤增加terraform模板。
+
+增加module资源到你的模板文件，例如main.tf
 
 ```hcl
 module "hbase" {
@@ -50,7 +54,7 @@ module "hbase" {
 
 ## 注意事项
 
-* 本 Module 使用的 AccessKey 和 SecretKey 可以直接从 `profile` 和 `shared_credentials_file` 中获取。如果未设置，可通过下载安装 [aliyun-cli](https://github.com/aliyun/aliyun-cli#installation) 后进行配置.
+* 本 Module 使用的 AccessKey 和 SecretKey 可以直接从 `profile` 和 `shared_credentials_file` 中获取。如果未设置，可通过下载安装 [aliyun-cli](https://github.com/aliyun/aliyun-cli#installation) 后进行配置。
 
 作者
 -------
