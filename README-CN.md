@@ -11,7 +11,7 @@ terraform-alicloud-hbase-cluster
 
 ## Terraform 版本
 
-本模版要求使用 Terraform 0.12 和阿里云 Provider 1.56.0+。
+本模版要求使用 Terraform 0.12 和阿里云 Provider 1.67.0+。
 
 ## 用法
 -----
@@ -28,7 +28,6 @@ module "hbase" {
   #################
   instance_name          = "tf-module-hbase"
   availability_zone      = "cn-shenzhen-b"
-  engine                 = "hbase"
   engine_version         = "2.0"
   master_instance_type   = "hbase.n1.medium"
   core_instance_type     = "hbase.sn1.large"

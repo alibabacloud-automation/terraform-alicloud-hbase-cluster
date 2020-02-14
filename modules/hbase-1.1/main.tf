@@ -6,7 +6,6 @@ provider "alicloud" {
   configuration_source    = "terraform-alicloud-modules/hbase"
 }
 locals {
-  engine         = "hbase"
   engine_version = "1.1"
 }
 
@@ -19,7 +18,6 @@ module "hbase" {
   #################
   instance_name          = var.instance_name
   availability_zone      = var.availability_zone
-  engine                 = local.engine
   engine_version         = local.engine_version
   master_instance_type   = var.master_instance_type
   core_instance_type     = var.core_instance_type

@@ -2,22 +2,22 @@
 # HBase Instance
 #################
 output "this_hbase_instance_id" {
-  description = "The ID of the HBase instance. "
+  description = "The ID of the HBase instance."
   value       = module.hbase_example.this_hbase_instance_id
 }
 
 output "this_hbase_instance_name" {
-  description = "The name of HBase instance. "
+  description = "The name of HBase instance."
   value       = module.hbase_example.this_hbase_instance_name
 }
 
 output "this_hbase_instance_zone_id" {
-  description = "The Zone to launch the HBase instance. "
+  description = "The Zone to launch the HBase instance."
   value       = module.hbase_example.this_hbase_instance_zone_id
 }
 
 output "this_hbase_instance_engine_version" {
-  description = "The engine version of the HBase instance. "
+  description = "The engine version of the HBase instance."
   value       = module.hbase_example.this_hbase_instance_engine_version
 }
 
@@ -50,7 +50,7 @@ output "this_hbase_instance_pay_type" {
 }
 
 output "this_hbase_instance_duration" {
-  description = "The duration that you will buy HBase instance. "
+  description = "The duration that you will buy HBase instance."
   value       = module.hbase_example.this_hbase_instance_duration
 }
 

@@ -2,22 +2,22 @@
 # HBase Instance
 #################
 output "this_hbase_instance_id" {
-  description = "The ID of the HBase instance. "
+  description = "The ID of the HBase instance."
   value       = local.this_instance_id
 }
 
 output "this_hbase_instance_name" {
-  description = "The name of HBase instance. "
+  description = "The name of HBase instance."
   value       = concat(alicloud_hbase_instance.this.*.name, [""])[0]
 }
 
 output "this_hbase_instance_zone_id" {
-  description = "The Zone to launch the HBase instance. "
+  description = "The Zone to launch the HBase instance."
   value       = concat(alicloud_hbase_instance.this.*.zone_id, [""])[0]
 }
 
 output "this_hbase_instance_engine_version" {
-  description = "The engine version of the HBase instance. "
+  description = "The engine version of the HBase instance."
   value       = concat(alicloud_hbase_instance.this.*.engine_version, [""])[0]
 }
 
@@ -50,7 +50,7 @@ output "this_hbase_instance_pay_type" {
 }
 
 output "this_hbase_instance_duration" {
-  description = "The duration that you will buy HBase instance. "
+  description = "The duration that you will buy HBase instance."
   value       = concat(alicloud_hbase_instance.this.*.duration, [""])[0]
 }
 

@@ -14,7 +14,7 @@ These types of resources are supported:
 
 ## Terraform versions
 
-This module requires Terraform 0.12 and Terraform Provider AliCloud 1.56.0+.
+This module requires Terraform 0.12 and Terraform Provider AliCloud 1.67.0+.
 
 ## Usage
 -----
@@ -31,7 +31,6 @@ module "hbase" {
   #################
   instance_name          = "tf-module-hbase"
   availability_zone      = "cn-shenzhen-b"
-  engine                 = "hbase"
   engine_version         = "2.0"
   master_instance_type   = "hbase.n1.medium"
   core_instance_type     = "hbase.sn1.large"

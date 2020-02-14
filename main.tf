@@ -9,7 +9,7 @@ provider "alicloud" {
 resource "alicloud_hbase_instance" "this" {
   name                   = var.instance_name
   zone_id                = var.availability_zone
-  engine                 = var.engine
+  engine                 = "hbase"
   engine_version         = var.engine_version
   master_instance_type   = var.master_instance_type
   core_instance_type     = var.core_instance_type
