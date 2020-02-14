@@ -46,7 +46,8 @@ module "hbase" {
 
 ## Examples
 
-* [hbase example](https://github.com/terraform-alicloud-modules/terraform-alicloud-hbase-cluster/tree/master/examples/hbase)
+* [example of hbase-1.1](https://github.com/terraform-alicloud-modules/terraform-alicloud-hbase-cluster/tree/master/examples/hbase-1.1)
+* [example of hbase-2.0](https://github.com/terraform-alicloud-modules/terraform-alicloud-hbase-cluster/tree/master/examples/hbase-2.0)
 
 ## Modules
 
