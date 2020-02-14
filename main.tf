@@ -7,6 +7,7 @@ provider "alicloud" {
 }
 
 resource "alicloud_hbase_instance" "this" {
+  count                  = var.create ? 1 : 0
   name                   = var.instance_name
   zone_id                = var.availability_zone
   engine                 = "hbase"

@@ -109,14 +109,8 @@ variable "cold_storage_size" {
 #################
 # extend
 #################
-variable "create_instance" {
-  description = "Whether to create HBase instance. If false, you can use a existing HBase instance by setting 'existing_instance_id'."
+variable "create" {
+  description = "Whether to create HBase instance."
   type        = bool
   default     = true
-}
-
-variable "existing_instance_id" {
-  description = "The Id of an existing HBase instance. If set, the 'create_instance' will be ignored."
-  type        = string
-  default     = ""
 }

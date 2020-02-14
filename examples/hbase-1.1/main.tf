@@ -1,5 +1,5 @@
 variable "region" {
-  default = ""
+  default = "cn-shenzhen"
 }
 
 provider "alicloud" {

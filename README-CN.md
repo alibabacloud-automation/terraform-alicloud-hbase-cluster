@@ -43,7 +43,8 @@ module "hbase" {
 
 ## 示例
 
-* [HBase 实例完整创建示例创建示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-hbase-cluster/tree/master/examples/hbase)
+* [hbase-1.1实例创建示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-hbase-cluster/tree/master/examples/hbase-1.1)
+* [hbase-2.0实例创建示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-hbase-cluster/tree/master/examples/hbase-2.0)
 
 ## 模块
 
