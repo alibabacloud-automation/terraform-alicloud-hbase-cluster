@@ -58,7 +58,7 @@ module "hbase" {
 
 作者
 -------
-Created and maintained by quanyun.
+Created and maintained by Alibaba Cloud Terraform Team(terraform@alibabacloud.com).
 
 许可
 ----
