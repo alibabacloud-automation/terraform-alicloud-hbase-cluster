@@ -1,6 +1,6 @@
 Terraform module which creates a HBase cluster on Alibaba Cloud.  
 terraform-alicloud-hbase-cluster
-=====================================================================
+
 
 English | [简体中文](https://github.com/terraform-alicloud-modules/terraform-alicloud-hbase-cluster/blob/master/README-CN.md)
 
@@ -12,12 +12,8 @@ These types of resources are supported:
 
 ----------------------
 
-## Terraform versions
-
-This module requires Terraform 0.12 and Terraform Provider AliCloud 1.67.0+.
-
 ## Usage
------
+
 ### You can use this in your terraform template with the following steps.
 
 Adding a module resource to your template, e.g. main.tf
@@ -25,7 +21,6 @@ Adding a module resource to your template, e.g. main.tf
 ```hcl
 module "hbase" {
   source               = "terraform-alicloud-modules/hbase/alicloud"
-  region               = "cn-shenzhen"
   #################
   # HBase Instance
   #################
@@ -55,9 +50,76 @@ module "hbase" {
 * [hbase-2.0](https://github.com/terraform-alicloud-modules/terraform-alicloud-hbase-cluster/tree/master/modules/hbase-2.0)
 
 ## Notes
+From the version v1.1.0, the module has removed the following `provider` setting:
 
-* This module using AccessKey and SecretKey are from `profile` and `shared_credentials_file`.
-If you have not set them yet, please install [aliyun-cli](https://github.com/aliyun/aliyun-cli#installation) and configure it.
+```hcl
+provider "alicloud" {
+  profile                 = var.profile != "" ? var.profile : null
+  shared_credentials_file = var.shared_credentials_file != "" ? var.shared_credentials_file : null
+  region                  = var.region != "" ? var.region : null
+  skip_region_validation  = var.skip_region_validation
+  configuration_source    = "terraform-alicloud-modules/hbase"
+}
+```
+
+If you still want to use the `provider` setting to apply this module, you can specify a supported version, like 1.0.0:
+
+```hcl
+module "hbase" {
+  source            = "terraform-alicloud-modules/hbase/alicloud"
+  version           = "1.0.0"
+  region            = "cn-shenzhen"
+  profile           = "Your-Profile-Name"
+  instance_name     = "tf-module-hbase"
+  availability_zone = "cn-shenzhen-b"
+  // ...
+}
+```
+
+If you want to upgrade the module to 1.1.0 or higher in-place, you can define a provider which same region with
+previous region:
+
+```hcl
+provider "alicloud" {
+  region  = "cn-shenzhen"
+  profile = "Your-Profile-Name"
+}
+module "hbase" {
+  source            = "terraform-alicloud-modules/hbase/alicloud"
+  instance_name     = "tf-module-hbase"
+  availability_zone = "cn-shenzhen-b"
+  // ...
+}
+```
+or specify an alias provider with a defined region to the module using `providers`:
+
+```hcl
+provider "alicloud" {
+  region  = "cn-shenzhen"
+  profile = "Your-Profile-Name"
+  alias   = "sz"
+}
+module "hbase" {
+  source            = "terraform-alicloud-modules/hbase/alicloud"
+  providers         = {
+    alicloud = alicloud.sz
+  }
+  instance_name     = "tf-module-hbase"
+  availability_zone = "cn-shenzhen-b"
+  // ...
+}
+```
+
+and then run `terraform init` and `terraform apply` to make the defined provider effect to the existing module state.
+
+More details see [How to use provider in the module](https://www.terraform.io/docs/language/modules/develop/providers.html#passing-providers-explicitly)
+
+## Terraform versions
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.0 |
+| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | >= 1.67.0 |
 
 
 Authors
