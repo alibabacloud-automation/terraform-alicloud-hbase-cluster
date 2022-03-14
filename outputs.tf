@@ -40,10 +40,12 @@ output "this_hbase_instance_core_disk_type" {
   description = "The disk type of the core node. "
   value       = concat(alicloud_hbase_instance.this.*.vswitch_id, [""])[0]
 }
+
 output "this_hbase_instance_core_disk_size" {
   description = "The disk size of the core node. "
   value       = concat(alicloud_hbase_instance.this.*.core_disk_size, [""])[0]
 }
+
 output "this_hbase_instance_pay_type" {
   description = "The pay type"
   value       = concat(alicloud_hbase_instance.this.*.pay_type, [""])[0]
@@ -63,6 +65,7 @@ output "this_hbase_instance_vswitch_id" {
   description = "The virtual switch ID to launch HBase instances in one VPC. "
   value       = concat(alicloud_hbase_instance.this.*.vswitch_id, [""])[0]
 }
+
 output "this_hbase_instance_cold_storage_size" {
   description = "The HBase instance backup period. "
   value       = concat(alicloud_hbase_instance.this.*.cold_storage_size, [""])[0]

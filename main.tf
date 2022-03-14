@@ -12,7 +12,7 @@ resource "alicloud_hbase_instance" "this" {
   pay_type               = var.pay_type
   duration               = var.duration
   auto_renew             = var.auto_renew
+  deletion_protection    = var.deletion_protection
   vswitch_id             = var.vswitch_id
   cold_storage_size      = var.cold_storage_size
 }
-

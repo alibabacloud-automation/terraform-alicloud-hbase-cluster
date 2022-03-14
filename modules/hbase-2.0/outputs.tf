@@ -40,10 +40,12 @@ output "this_hbase_instance_core_disk_type" {
   description = "The disk type of the core node. "
   value       = module.hbase.this_hbase_instance_core_disk_type
 }
+
 output "this_hbase_instance_core_disk_size" {
   description = "The disk size of the core node. "
   value       = module.hbase.this_hbase_instance_core_disk_size
 }
+
 output "this_hbase_instance_pay_type" {
   description = "The pay type"
   value       = module.hbase.this_hbase_instance_pay_type
@@ -63,6 +65,7 @@ output "this_hbase_instance_vswitch_id" {
   description = "The virtual switch ID to launch HBase instances in one VPC. "
   value       = module.hbase.this_hbase_instance_vswitch_id
 }
+
 output "this_hbase_instance_cold_storage_size" {
   description = "The HBase instance backup period. "
   value       = module.hbase.this_hbase_instance_cold_storage_size
