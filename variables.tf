@@ -25,19 +25,28 @@ variable "skip_region_validation" {
   default     = false
 }
 
+#################
+# extend
+#################
+variable "create" {
+  description = "Whether to create HBase instance."
+  type        = bool
+  default     = false
+}
+
 ##############################################################
 # HBase Instance
 ##############################################################
-variable "availability_zone" {
-  description = "The available zone to launch hbase instance."
+variable "instance_name" {
+  description = "Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'."
   type        = string
   default     = ""
 }
 
-variable "instance_name" {
-  description = "Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'."
+variable "availability_zone" {
+  description = "The available zone to launch hbase instance."
   type        = string
-  default     = "tf-module-hbase"
+  default     = ""
 }
 
 variable "engine_version" {
@@ -94,6 +103,12 @@ variable "auto_renew" {
   default     = "false"
 }
 
+variable "deletion_protection" {
+  description = "The switch of delete protection."
+  type        = bool
+  default     = false
+}
+
 variable "vswitch_id" {
   description = "VSwitch variables, if vswitch_id is empty, then the net_type = classic."
   type        = string
@@ -104,13 +119,4 @@ variable "cold_storage_size" {
   description = "cold storage disk size, 0 mean is_cold_storage = false."
   type        = number
   default     = 0
-}
-
-#################
-# extend
-#################
-variable "create" {
-  description = "Whether to create HBase instance."
-  type        = bool
-  default     = true
 }
