@@ -25,11 +25,11 @@ module "hbase_example" {
   region                 = var.region
   instance_name          = "tf-module-hbase-2.0-example"
   availability_zone      = data.alicloud_zones.default.zones.0.id
-  master_instance_type   = "hbase.n1.medium"
+  master_instance_type   = "hbase.sn1.large"
   core_instance_type     = "hbase.sn1.large"
   core_instance_quantity = 3
   core_disk_type         = "cloud_ssd"
-  core_disk_size         = 100
+  core_disk_size         = 400
   pay_type               = "PostPaid"
   auto_renew             = "false"
   vswitch_id             = data.alicloud_vswitches.default.ids.0
